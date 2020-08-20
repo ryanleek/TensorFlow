@@ -3,41 +3,37 @@
 
 # # Welcome to Jupyter!
 
-# In[ ]:
+# In[1]:
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-import cv2
+import cv2  #'pip install opencv-python' require
 
-DATADIR - "C:/Datasets/PetImages"
-CATAGORIES = ["DOG", "CAT"]
+DATADIR = "C:/Datasets/PetImages"
+CATEGORIES = ["DOG", "CAT"]
+IMG_SIZE = 50
 
 for category in CATEGORIES:
     path = os.path.join(DATADIR, category) #path to cats or dogs directory
     for img in os.listdir(path):
         #convert images in to an array while grayscaling the image
         img_array = cv2.imread(os.path.join(path,img), cv2.IMREAD_GRAYSCALE)
+        
         plt.imshow(img_array, cmap="gray")
         plt.show()
+        #break
+    #break > to test grayscale image
 
 
-# In[ ]:
+# In[23]:
 
 
 print(img_array.shape)
 
 
-# In[ ]:
-
-
-IMG_SIZE = 50
-
-new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
-
-
-# In[ ]:
+# In[17]:
 
 
 training_data = []
@@ -54,19 +50,19 @@ def create_training_data():
                 new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
                 #add the image to traing dataset
                 training_data.append([new_array, class_num])
-            except Exception as e:
+            except Exception as _:
                 pass
             
 create_training_data()
 
 
-# In[ ]:
+# In[58]:
 
 
 print(len(training_data))
 
 
-# In[ ]:
+# In[64]:
 
 
 import random
@@ -74,7 +70,7 @@ import random
 random.shuffle(training_data)
 
 
-# In[ ]:
+# In[72]:
 
 
 X = []
@@ -87,7 +83,7 @@ for features, label in training_data:
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1) #1 because its grayscale
 
 
-# In[ ]:
+# In[85]:
 
 
 import pickle
@@ -101,7 +97,7 @@ pickle.dump(X, pickle_out)
 pickle_out.close()
 
 
-# In[ ]:
+# In[99]:
 
 
 pickle_in = open("X.pickle", "rb")
