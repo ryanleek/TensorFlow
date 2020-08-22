@@ -70,11 +70,11 @@ model.add(Flatten())    #convert data(input for Dense) to 1D array
 model.add(Dense(64))    #
 
 #output layer: Dense layer(1 neurons, Sigmoid)
-model.add(Dense(1))
-model.add(Activation('sigmoid'))
+model.add(Dense(1)) 
+model.add(Activation("sigmoid"))
 
 #training the model
-model.compile(loss="binary_cross_entropy", #because its either cats or dogs
+model.compile(loss="binary_crossentropy", #because its either cats or dogs
             optimizer="adam",
             metrics=['accuracy'])
 
