@@ -43,6 +43,7 @@ for features, label in training_data:
     
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1) #1 because its grayscale(if rgb: 3)
 X = X/255.0 #scale the data to 0~1(max pixel data: 255)
+y = np.array(y)
 
 
 # In[47]:
@@ -54,7 +55,7 @@ from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D,
 model = Sequential()
 
 #input layer: Convolutional layer(64 neurons, 3x3 window, ignore -1, ReLU)
-model.add(Conv2D(64, (3,3), input_shape = X.shape[1:]))
+model.add(Conv2D(64, (3,3), input_shape=X.shape[1:]))
 model.add(Activation("relu"))
 #could be regarded as separate layer
 model.add(MaxPooling2D(pool_size=(2,2)))#picks most significant data in pool from conv layer output
@@ -78,5 +79,3 @@ model.compile(loss="binary_cross entropy", #because its either cats or dogs
             metrics=['accuracy'])
 
 model.fit(X, y, batch_size=32, epochs=3, validation_split=0.1)
-
-# %%
