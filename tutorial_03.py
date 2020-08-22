@@ -79,3 +79,4 @@ model.compile(loss="binary_cross entropy", #because its either cats or dogs
             metrics=['accuracy'])
 
 model.fit(X, y, batch_size=32, epochs=3, validation_split=0.1)
+
