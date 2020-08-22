@@ -74,7 +74,7 @@ model.add(Dense(1))
 model.add(Activation('sigmoid'))
 
 #training the model
-model.compile(loss="binary_cross entropy", #because its either cats or dogs
+model.compile(loss="binary_cross_entropy", #because its either cats or dogs
             optimizer="adam",
             metrics=['accuracy'])
 
