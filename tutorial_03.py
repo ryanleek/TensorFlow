@@ -10,8 +10,12 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
 from tensorflow.keras.callbacks import TensorBoard
 
+#set tensorboard, called when fitting the model
 NAME = "CatvDog_Cnn_64x2{}".format(int(time.time()))
 tensorboard = TensorBoard(log_dir='logs/{}'.format(NAME))
+#To view tensorboard, open cmd from this dir.
+#then enter < "tensorboard --logdir=logs/" > to cmd
+#paste the adress that cmd gives you to your browser 
 
 DATADIR = "C:/Datasets/PetImages"
 CATEGORIES = ["DOG", "CAT"]
