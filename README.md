@@ -1,6 +1,11 @@
 # TensorFlow
 
 2020 Deep Learning Introduction with Python + Tensorflow/Keras
+
+1. CNN with Kaggle Cats and Dogs(tutorial 01~03): Learn various layers and tensorboard
+2. RNN
+
+#Extras
  
 A. How to Install Tensorflow on Python
 
@@ -9,9 +14,10 @@ A. How to Install Tensorflow on Python
  2. Activate venv >> .venv\scripts\activate
  3. Install Tensorflow >> pip install --upgrade tensorflow
  
-For tutorials_02, 03 download below
+B. For tutorials_02, 03 download below
 - Kaggle Cats and Dogs: https://www.microsoft.com/en-us/download/confirmation.aspx?id=54765
 
-To view tensorboard, install tensorbard by pip seperately, then view log/
+C. To view tensorboard, install tensorbard by pip seperately, then view log/
+
 
 Following tutorials from: https://pythonprogramming.net/introduction-deep-learning-python-tensorflow-keras/
