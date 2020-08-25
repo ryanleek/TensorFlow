@@ -5,8 +5,9 @@
 1. CNN with Kaggle Cats and Dogs(tutorials 01~03): Learn various layers and tensorboard
 2. RNN
 
+Following tutorials from: https://pythonprogramming.net/introduction-deep-learning-python-tensorflow-keras/
+
 #Extras
- 
 A. How to Install Tensorflow on Python
 
  0. Install Virtualenv >> pip3 install -U pip virtualenv
@@ -19,5 +20,3 @@ B. For tutorials_02, 03 download below
 
 C. To view tensorboard, install tensorbard by pip seperately, then view log/
 
-
-Following tutorials from: https://pythonprogramming.net/introduction-deep-learning-python-tensorflow-keras/
