@@ -11,7 +11,7 @@ from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D,
 from tensorflow.keras.callbacks import TensorBoard
 
 #set tensorboard, called when fitting the model
-NAME = "CatvDog_Cnn_64x2{}".format(int(time.time()))
+NAME = "CatvDog_Cnn_{}-conv{}-nodes_{}".format(3, 64, int(time.time()))
 tensorboard = TensorBoard(log_dir='logs/{}'.format(NAME))
 #To view tensorboard, open cmd from this dir.
 #then enter < "tensorboard --logdir=logs/" > to cmd
@@ -75,10 +75,16 @@ model.add(Conv2D(64, (3,3)))
 model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
-#hidden layer 2: Flatten-Dense layer(64 neurons)
-model.add(Flatten())    #convert data(input for Dense == 3D feature map) to 1D array
-model.add(Dense(64))    #
+#hidden layer 2: Convolution layer(64 neurons, 3x3 window, ReLU)
+model.add(Conv2D(64, (3,3)))
 model.add(Activation("relu"))
+model.add(MaxPooling2D(pool_size=(2,2)))
+
+
+#Flatten-Dense layer(64 neurons) >> changed to comment due to rise in val_loss
+model.add(Flatten())    #convert data(input for Dense == 3D feature map) to 1D array
+#model.add(Dense(64))    #
+#model.add(Activation("relu"))
 
 #output layer: Dense layer(1 neurons, Sigmoid)
 model.add(Dense(1)) 
