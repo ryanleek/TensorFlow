@@ -2,7 +2,7 @@
 
 2020 Deep Learning Introduction with Python + Tensorflow/Keras
 
-1. CNN with Kaggle Cats and Dogs(tutorial 01~03): Learn various layers and tensorboard
+1. CNN with Kaggle Cats and Dogs(tutorials 01~03): Learn various layers and tensorboard
 2. RNN
 
 #Extras
