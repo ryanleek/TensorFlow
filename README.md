@@ -7,7 +7,8 @@
 
 Following tutorials from: https://pythonprogramming.net/introduction-deep-learning-python-tensorflow-keras/
 
-#Extras
+# Extras
+
 A. How to Install Tensorflow on Python
 
  0. Install Virtualenv >> pip3 install -U pip virtualenv
