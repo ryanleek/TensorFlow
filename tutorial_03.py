@@ -80,7 +80,6 @@ model.add(Conv2D(64, (3,3)))
 model.add(Activation("relu"))
 model.add(MaxPooling2D(pool_size=(2,2)))
 
-
 #Flatten-Dense layer(64 neurons) >> changed to comment due to rise in val_loss
 model.add(Flatten())    #convert data(input for Dense == 3D feature map) to 1D array
 #model.add(Dense(64))    #
