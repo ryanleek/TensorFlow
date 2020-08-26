@@ -9,7 +9,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-import cv2  #'pip install opencv-python' require
+from cv2 import cv2  #'pip install opencv-python' require
 
 DATADIR = "C:/Datasets/PetImages"
 CATEGORIES = ["DOG", "CAT"]
