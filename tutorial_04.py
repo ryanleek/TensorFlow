@@ -16,6 +16,6 @@ def prepare_img(filepath):
 #load previously created model
 model = tf.keras.models.load_model("64x3-CNN.model")
 #predict the new image with the model
-prediction = model.predict([prepare_img('cat.jpg')])
+prediction = model.predict([prepare_img('cat.jpg')])    #change to dog.jpg to test dog
 #print the prediction result
 print(CATEGORIES[int(prediction[0][0])])
