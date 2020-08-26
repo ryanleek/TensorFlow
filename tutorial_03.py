@@ -1,6 +1,6 @@
 import os
 import time
-import cv2  #'pip install opencv-python' required
+from cv2 import cv2  #'pip install opencv-python' required
 
 import random
 import numpy as np
@@ -11,7 +11,7 @@ from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D,
 from tensorflow.keras.callbacks import TensorBoard
 
 #set tensorboard, called when fitting the model
-NAME = "CatvDog_Cnn_{}-conv{}-nodes_{}".format(3, 64, int(time.time()))
+NAME = "CatvDog_Cnn_{}-conv_{}-nodes_{}".format(3, 64, int(time.time()))
 tensorboard = TensorBoard(log_dir='logs/{}'.format(NAME))
 #To view tensorboard, open cmd from this dir.
 #then enter < "tensorboard --logdir=logs/" > to cmd
@@ -51,7 +51,8 @@ random.shuffle(training_data)
 for features, label in training_data:
     X.append(features)
     y.append(label)
-    
+
+#convert list of data to numpy array for Keras
 X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1) #1 because its grayscale(if rgb: 3)
 X = X/255.0 #scale the data to 0~1(max pixel data: 255)
 y = np.array(y)
@@ -95,3 +96,5 @@ model.compile(loss="binary_crossentropy", #because its either cats or dogs
             metrics=['accuracy'])
 
 model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1, callbacks=[tensorboard])
+
+model.save('64x3-CNN.model')
