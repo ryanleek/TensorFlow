@@ -3,8 +3,8 @@
 2020 Deep Learning Introduction with Python + Tensorflow/Keras
 
 1. First Deep Learning model with Mnist(tutorial 01): Practice building and training model
-2. CNN with Kaggle Cats and Dogs(tutorials 02~04): Learn various layers and tensorboard
-3. RNN
+2. CNN with Kaggle Cats and Dogs(tutorials 02~04): Learn various layers, normalizing, and tensorboard
+3. RNN introduction(tutorial 05): Dropout,
 
 Following tutorials from: https://pythonprogramming.net/introduction-deep-learning-python-tensorflow-keras/
 
